@@ -13,13 +13,7 @@ clk=1'b0;
 end
 
 initial begin
-tt = 1'b0;
-#10ns;
-tt = 1'b1;
-#10ns;
-tt = 1'b0;
-#10ns;
-#300 $finish;
+	run_test();
 end
 
 always #10 clk=!clk;

@@ -4,6 +4,8 @@
 +incdir+$UVM_HOME
 $UVM_HOME/dpi/uvm_dpi.cc
 $UVM_HOME/uvm.sv
++incdir+$DESIGNWARE_HOME/vip/svt/amba_svt/latest/sverilog/include/
++incdir+$DESIGNWARE_HOME/vip/svt/amba_svt/latest/sverilog/src/
 +incdir+$VERIF_HOME/top/env/
 $VERIF_HOME/top/env/simple_soc_env_pkg.sv
 +incdir+$VERIF_HOME/top/test/
