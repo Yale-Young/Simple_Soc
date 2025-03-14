@@ -12,6 +12,8 @@
 
 import simple_soc_env_pkg::*;
 
+`include "simple_soc_vseq_lib.sv"
+
 class simple_soc_base_test extends uvm_test;
 
    simple_soc_env         soc_env;
