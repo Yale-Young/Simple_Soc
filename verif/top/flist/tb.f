@@ -11,6 +11,9 @@ $UVM_HOME/uvm.sv
 +incdir+$VERIF_HOME/top/env/
 $VERIF_HOME/top/env/simple_soc_env_pkg.sv
 +incdir+$VERIF_HOME/top/sequence/
++incdir+$VERIF_HOME/common_uvc/svt_axi_vip/
++incdir+$VERIF_HOME/common_uvc/svt_axi_vip/sequence_lib/
+$VERIF_HOME/common_uvc/svt_axi_vip/sequence_lib/svt_axi_vip_vseq_lib.sv
 +incdir+$VERIF_HOME/top/test/
 +incdir+$VERIF_HOME/top/test/connect/
 $VERIF_HOME/top/test/simple_soc_test_top.sv

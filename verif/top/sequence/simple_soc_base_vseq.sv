@@ -22,11 +22,19 @@ class simple_soc_base_vseq extends uvm_sequence;
   endfunction : new
 
   virtual task pre_body();
+    `uvm_info("pre_body", "Entered ...", UVM_LOW)
+    if(get_parent_sequence()==null && starting_phase!=null)
+        starting_phase.raise_objection(this);
+    `uvm_info("pre_body", "Exiting...", UVM_LOW)
   endtask
   /** Need an empty body function to override the warning from the UVM base class */
   virtual task body();
   endtask
   virtual task post_body();
+    `uvm_info("post_body", "Entered ...", UVM_LOW)
+    if(get_parent_sequence()==null && starting_phase!=null)
+        starting_phase.drop_objection(this);
+    `uvm_info("post_body", "Exiting...", UVM_LOW)
   endtask
 
 endclass : simple_soc_base_vseq 

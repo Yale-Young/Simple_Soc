@@ -22,12 +22,15 @@ class soc_debug_vseq extends simple_soc_base_vseq;
      super.new(name);
   endfunction : new
 
-  virtual task pre_body();
-  endtask
   /** Need an empty body function to override the warning from the UVM base class */
   virtual task body();
-  endtask
-  virtual task post_body();
+    axi_master_wr_rd_sequence  axi_mst_seq;
+    axi_mst_seq = new();
+    `uvm_info("body", "Entered ...", UVM_LOW)
+    #1000ns;
+    `uvm_info(get_full_name,"test",UVM_LOW)
+    //axi_mst_seq.start(p_sequencer.axi_mst_sqr);
+    `uvm_info("body", "Exiting...", UVM_LOW)
   endtask
 
 endclass : soc_debug_vseq 

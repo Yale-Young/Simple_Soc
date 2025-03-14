@@ -12,7 +12,8 @@
 
 class simple_soc_virtual_sequencer extends uvm_sequencer;
 
-    svt_axi_system_sequencer axi_sqr;
+    svt_axi_master_sequencer      axi_mst_sqr;
+    svt_axi_slave_sequencer       axi_slv_sqr;
 
   `uvm_component_utils(simple_soc_virtual_sequencer)
 
