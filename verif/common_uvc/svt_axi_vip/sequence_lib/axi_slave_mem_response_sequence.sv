@@ -34,7 +34,7 @@ class axi_slave_mem_response_sequence extends svt_axi_slave_base_sequence;
     end
 
     // consumes responses sent by driver
-    sink_responses();
+        sink_responses();
 
     forever begin
       /**

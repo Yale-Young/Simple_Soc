@@ -34,13 +34,13 @@ function void simple_soc_base_test::set_axi_slave_sequence(int seq_id);
     case(seq_id)
         0:begin
             uvm_config_db#(uvm_object_wrapper)::set(this,
-                "soc_env.soc_sequencer.axi_slv_sqr.main_phase",
+                "soc_env.axi_system_env.slave[0].sequencer.main_phase",
                 "default_sequence",
                 axi_slave_mem_response_sequence::type_id::get());
         end
         default:begin
             uvm_config_db#(uvm_object_wrapper)::set(this,
-                "soc_env.soc_sequencer.axi_slv_sqr.main_phase",
+                "soc_env.axi_system_env.slave[0].sequencer.main_phase",
                 "default_sequence",
                 axi_slave_mem_response_sequence::type_id::get());
         end

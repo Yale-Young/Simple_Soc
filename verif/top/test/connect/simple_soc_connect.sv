@@ -16,7 +16,7 @@
   parameter simulation_cycle = 50;
 
   /** Signal to generate the clock */
-  bit SystemClock;
+  bit SystemClock,rst_n;
 
   svt_axi_if axi_if();
   assign axi_if.common_aclk = SystemClock;
@@ -27,8 +27,17 @@
    * Assign the reset pin from the reset interface to the reset pins from the VIP
    * interface.
    */
-  assign axi_if.master_if[0].aresetn = 1'b1;//axi_reset_if.reset;
-  assign axi_if.slave_if[0].aresetn =  1'b1;//axi_reset_if.reset;
+  assign axi_if.master_if[0].aresetn = rst_n;//axi_reset_if.reset;
+  assign axi_if.slave_if[0].aresetn =  rst_n;//axi_reset_if.reset;
+
+  initial begin
+    rst_n = 1'b1;
+    #80ns;
+    rst_n = 1'b0;
+    #200ns;
+    rst_n = 1'b1;
+
+  end
 
   /** Testbench 'System' Clock Generator */
   initial begin

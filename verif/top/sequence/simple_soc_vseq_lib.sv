@@ -29,7 +29,8 @@ class soc_debug_vseq extends simple_soc_base_vseq;
     `uvm_info("body", "Entered ...", UVM_LOW)
     #1000ns;
     `uvm_info(get_full_name,"test",UVM_LOW)
-    //axi_mst_seq.start(p_sequencer.axi_mst_sqr);
+    axi_mst_seq.start(p_sequencer.axi_mst_sqr);
+    #10000ns;
     `uvm_info("body", "Exiting...", UVM_LOW)
   endtask
 
